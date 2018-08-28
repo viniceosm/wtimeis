@@ -1,8 +1,8 @@
 let minAn = undefined;
-itIs();
+itIs(true);
 setInterval(_ => itIs(), 950);
 
-function itIs() {
+function itIs(firstTime) {
 	let dataAtual = new Date();
 	let horaAtual = dataAtual.getHours();
 	let minAtual = dataAtual.getMinutes();
@@ -14,15 +14,18 @@ function itIs() {
 
 	msg += msgPartial();
 
+  if (firstTime) {
+    document.getElementById('time').innerHTML = `${msg}`;
+  }
+
 	if (minAn === undefined) {
 		console.log(`${msg}`);
 	} else if (minAn !== minAtual) {
     console.log(`What time is it?`);
 		console.log(`${msg}`);
+    document.getElementById('time').innerHTML = `${msg}`;
 	}
 	minAn = minAtual;
-
-	document.getElementById('time').innerHTML = `${msg}`;
 
 	function msgPartial() {
 		let o = {
