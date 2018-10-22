@@ -14,16 +14,16 @@ function itIs(firstTime) {
 
 	msg += msgPartial();
 
-  if (firstTime) {
-    document.getElementById('time').innerHTML = msg;
-  }
+	if (firstTime) {
+		document.getElementById('time').innerHTML = msg;
+	}
 
 	if (minAn === undefined) {
 		console.log(msg);
 	} else if (minAn !== minAtual) {
-    console.log(`What time is it?`);
+		console.log(`What time is it?`);
 		console.log(msg);
-    document.getElementById('time').innerHTML = msg;
+		document.getElementById('time').innerHTML = msg;
 	}
   
 	minAn = minAtual;
