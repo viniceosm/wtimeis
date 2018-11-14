@@ -25,7 +25,7 @@ function itIs(firstTime) {
 		console.log(msg);
 		document.getElementById('time').innerHTML = msg;
 	}
-  
+
 	minAn = minAtual;
 
 	function msgPartial() {
@@ -35,7 +35,7 @@ function itIs(firstTime) {
 			30: () => `half past ${horaAtualWord}`,
 			45: () => `quarter to ${inWords(ampm(horaAtual + 1))}`,
 			minor: () => `${minAtualWord} past ${horaAtualWord}`,
-			else: () => `${inWords(60 - minAtual)} to ${inWords(ampm(horaAtual + 1))}`
+			else: () => minor()
 		}
 
 		try {
@@ -53,11 +53,11 @@ function ampm (num) {
 }
 
 function inWords (num) {
-	var a = ['', 'one ', 'two ', 'three ', 'four ', 'five ', 'six ', 'seven ', 'eight ', 'nine ', 'ten ', 'eleven ', 'twelve ', 'thirteen ', 'fourteen ', 'fifteen ', 'sixteen ', 'seventeen ', 'eighteen ', 'nineteen '];
-	var b = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+	let a = ['', 'one ', 'two ', 'three ', 'four ', 'five ', 'six ', 'seven ', 'eight ', 'nine ', 'ten ', 'eleven ', 'twelve ', 'thirteen ', 'fourteen ', 'fifteen ', 'sixteen ', 'seventeen ', 'eighteen ', 'nineteen '];
+	let b = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
 
-	n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
-	if (!n) return; var str = '';
+	let n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+	if (!n) return; let str = '';
 	str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + ' ' : '';
 	return str.trim();
 }

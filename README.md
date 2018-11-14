@@ -1,8 +1,9 @@
 # wtimeis
 
-Shows the time
+'Speak' the time
 
 ## Examples
+
 | message | condition |
 |-|-|
 | 10:00 (ten o'clock) | if minutes ends with 00 |
@@ -10,4 +11,4 @@ Shows the time
 | 10:30 (half past ten) | if minutes are equal to 30 |
 | 10:45 (quarter to eleven) | if minutes are equal to 45 |
 | 10:20 (twenty past ten) | if minutes < 45 |
-| 10:55 (five to eleven) | if minutes > 45 |
+| 10:55 (fifty five past ten) | if minutes > 45 |
