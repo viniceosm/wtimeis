@@ -35,7 +35,7 @@ function itIs(firstTime) {
 			30: () => `half past ${horaAtualWord}`,
 			45: () => `quarter to ${inWords(ampm(horaAtual + 1))}`,
 			minor: () => `${minAtualWord} past ${horaAtualWord}`,
-			else: () => minor()
+			else: () => this.minor()
 		}
 
 		try {
