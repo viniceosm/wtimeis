@@ -6,6 +6,18 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+html, body {
+	height: 100%;
+}
+
+.card-flex {
+	display: flex; /* pai vira flex */
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
 .card {
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 	padding: 20px 0;
